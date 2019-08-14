@@ -100,11 +100,8 @@ class Agreementr:
                 with torch.no_grad():
                     logits = self.model(input_ids, segment_ids, input_mask, labels=None)
                 # logits = logits.detach().cpu()
-                if len(preds) == 0:
-                    preds.append(logits)
-                else:
-                    preds[0] = np.append(
-                        preds[0], logits, axis=0)
+
+                preds.append(logits)
             preds = [item for sublist in preds for item in sublist]
             preds = np.squeeze(np.array(preds[0]))
         else:
