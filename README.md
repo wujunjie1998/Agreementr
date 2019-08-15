@@ -35,7 +35,7 @@ which takes a single text of a list of texts, and returns a list of raw values i
 You may directly import `agreementr` and use the default predict method, e.g.:
 
     >>> import agreementr
-    >>> agreementr.predict("I am totally agree with you")
+    >>> agreementr.predict(["I am totally agree with you"])
     [4.3568916]
     
 ### Construct from class
@@ -45,7 +45,7 @@ Alternatively, you may also construct the object from class, where you could cus
 	>>> ar = Agreementr()
 	
 	# Predict a single text
-	>>> ar.predict("I am totally agree with you")
+	>>> ar.predict(["I am totally agree with you"])
 	[4.3568916]
 	
 	# Predict a list of texts
